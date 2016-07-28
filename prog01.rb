@@ -42,7 +42,11 @@ end
 for x in 0..79 do
    z = x / 80.0
    y = f(z) * 25.0
-   frame[24 - y.to_i][x] = '*'
+  if 24-y.to_i>=0 then
+    frame[24 - y.to_i][x] = '*'
+  else
+    frame[24 - y.to_i][x] = ''
+  end
 end
 # printout
 frame.each do |line|
