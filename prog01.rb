@@ -6,7 +6,6 @@ end
 
 puts "Input f(x)"
 $func = gets.chop
-
 # Initialize frame buffer
 # frame buffer x=0..79, y=0..24
 frame = []
@@ -31,17 +30,20 @@ frame[23][78] = 'X'
 frame[0][1] = 'Y'
 
 # draw func
-###
-### 分担3
-###
-
+frame[0][20]= "y"
+frame[0][21]= "="
+b=22
+for i in 0..$func.size
+  frame[0][b]="#{$func[i]}"
+  b=b+1
+end
 # draw graph
+
 for x in 0..79 do
    z = x / 80.0
    y = f(z) * 25.0
    frame[24 - y.to_i][x] = '*'
 end
-
 # printout
 frame.each do |line|
   line.each do |ch|
