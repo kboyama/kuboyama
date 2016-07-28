@@ -37,9 +37,9 @@ frame[0][1] = 'Y'
 
 # draw graph
 for x in 0..79 do
-  ###
-  ### 分担2
-  ###
+   z = x / 80.0
+   y = f(z) * 25.0
+   frame[24 - y.to_i][x] = '*'
 end
 
 # printout
